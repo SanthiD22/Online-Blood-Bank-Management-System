@@ -1,0 +1,36 @@
+version: "3.9"
+services:
+  mysql:
+    image: mysql:8
+    container_name: bloodbank-mysql
+    environment:
+      MYSQL_ROOT_PASSWORD: yourpassword
+      MYSQL_DATABASE: blood_bank_db
+    ports:
+      - "3306:3306"
+    volumes:
+      - mysql-data:/var/lib/mysql
+    healthcheck:
+      test: ["CMD", "mysqladmin", "ping", "-h", "localhost"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+#  app:
+#    build: .
+#    image: bloodbank-app:1.0
+#    container_name: bloodbank-app
+#    depends_on:
+#      mysql:
+#        condition: service_healthy
+#    environment:
+#      DB_HOST: mysql
+#      DB_PORT: 3306
+#      DB_USER: root
+#      DB_PASS: yourpassword
+#    ports:
+#      - "8080:8080"
+#    restart: unless-stopped
+
+volumes:
+  mysql-data:

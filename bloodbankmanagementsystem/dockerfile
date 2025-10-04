@@ -1,0 +1,10 @@
+# Use a slim JDK image (adjust tag to preferred JDK 17)
+FROM eclipse-temurin:17-jdk-jammy
+
+ARG JAR_FILE=build/libs/*.jar
+COPY ${JAR_FILE} app.jar
+
+# Expose port your app runs on
+EXPOSE 8080
+
+ENTRYPOINT ["java","-jar","/app.jar"]

@@ -1,0 +1,35 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Register Donor</title>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <div class="container">
+    <nav><a href="index.html">Home</a><a href="donors.html">View Donors</a><a href="search.html">Search</a></nav>
+    <h1>Register Donor</h1>
+    <div id="msg"></div>
+    <label for="name">Name</label>
+    <input id="name" />
+    <label for="bloodGroup">Blood Group</label>
+    <select id="bloodGroup">
+      <option value="A+">A+</option>
+      <option value="A-">A-</option>
+      <option value="B+">B+</option>
+      <option value="B-">B-</option>
+      <option value="O+">O+</option>
+      <option value="O-">O-</option>
+      <option value="AB+">AB+</option>
+      <option value="AB-">AB-</option>
+    </select>
+    <label for="contact">Contact</label>
+    <input id="contact" />
+    <label for="city">City</label>
+    <input id="city" />
+    <button id="submitBtn">Register</button>
+  </div>
+  <script src="js/api.js"></script>
+  <script src="js/register.js"></script>
+</body>
+</html>
